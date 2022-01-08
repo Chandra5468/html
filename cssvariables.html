@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS VARIABLES</title>
+    <style>
+        :root{ /* this is how global variable is declared*/
+            --standard-font: Times, "Times New Roman"; /*A variable is declared using two --*/
+            --standard-height:400px;
+            --width11:400px;
+
+        }
+        .div1{
+            /*LOCAL VARIABLE*/
+            --local-background-color: blue;
+            font-family:var(--standard-font);/*This is how variable can be loaded or taken*/
+            width:var(--width11);
+            height:var(--standard-height);
+            background-color: var(--local-background-color);
+        }
+        .div2{
+            width:var(--width11);
+            height:var(--standard-height);
+            background-color: var(--local-background-color);/*Here a local variable declared in one class cannot be used in another class*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="div1">WEB DEV</div>
+    <div class="div2">Local variable does not work in another class</div>
+    
+</body>
+</html>
